@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/meetings/index",
     "pages/index/index",
     "pages/openapi/openapi",
     "pages/databaseGuide/databaseGuide",
@@ -26,8 +27,8 @@
     "selectedColor": "#5B8EEA",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath": "pages/meetings/index",
+        "text": "会议"
       },
       {
         "pagePath": "pages/openapi/openapi",
