@@ -21,6 +21,20 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#5B8EEA",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/openapi/openapi",
+        "text": "我的"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
