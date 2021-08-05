@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!--会议信息确认-->
 <view class="container">
   <view class="w-form-item">
     <view class="w-form-label">会议室</view>

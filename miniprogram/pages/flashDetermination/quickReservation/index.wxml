@@ -1,0 +1,26 @@
+<!--抢占成功-->
+<view class="container">
+  <view class="res-title-wrap">
+    <view class="title-left">满足你条件的会议室</view>
+    <view class="title-right">武汉-花山-B3</view>
+  </view>
+
+  <view class="list-item">
+    <view class="list-item-wrap">
+      <view class="floor">4F</view>
+      <view class="meeting-title">风陵渡（电话 预计2人）</view>
+      <view class="meeting-time status-kongxian">16:00-17:00 空闲</view>
+      <button type="default" class="btn" style="width: 100px;" plain>快速预定</button>
+    </view>
+  </view>
+
+  <view class="list-item">
+    <view class="list-item-wrap">
+      <!-- <view class="floor">4F</view> -->
+      <view class="meeting-title">风陵渡（电话 预计2人）</view>
+      <view class="meeting-time status-zhanyong">16:00-17:00 空闲</view>
+      <button type="default" class="btn" style="width: 100px;" plain>快速预定</button>
+    </view>
+  </view>
+
+</view>

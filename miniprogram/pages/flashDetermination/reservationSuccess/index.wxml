@@ -1,0 +1,27 @@
+<!--抢占成功-->
+<view class="container">
+  <view class="content-wrap">
+    <icon class="icon-box-img" type="success" size="22"></icon>
+    <view class="success-title">预定成功</view>
+  </view>
+  <view class="success-content">
+    <view class="title">高维鹏预订的会议室</view>
+    <view class="info-wrap">
+      <view class="address">
+        <view class="label">会议地点</view>
+        <view class="info">风陵渡（电话 预计2人）</view>
+      </view>
+      <view class="time">
+        <view class="label">会议时间</view>
+        <view class="info">2021-7-8 16:00-17:00</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn-group">
+    <view class="btn-wrap">
+      <button class="btn-sure" type="primary" size="default" style="width: 100%;margin-bottom: 30rpx;">编辑会议信息</button>
+    </view>
+  </view>
+
+</view>

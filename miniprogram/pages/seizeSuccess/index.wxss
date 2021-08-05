@@ -1,0 +1,25 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+}
+
+.notice-wrap {
+  padding: 60px 50px 80px 50px;
+}
+.notice-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.notice-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 按钮 */
+.btn-group {
+  width: 100%;
+  padding: 80rpx 0;
+}
+.btn-wrap {
+  padding: 0 30rpx;
+}

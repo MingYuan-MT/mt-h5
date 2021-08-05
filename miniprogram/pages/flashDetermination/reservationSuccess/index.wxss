@@ -1,0 +1,66 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+  padding: 30px;
+}
+
+.content-wrap {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.success-title {
+  margin-left: 5px;
+  font-weight: bold;
+}
+.success-content {
+  border: 1px solid #d8d8d8;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  padding-bottom: 30px;
+}
+.title {
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.info-wrap {
+  padding: 10px;
+}
+.address {
+  padding: 6px 0;
+  display: flex
+}
+.address .label {
+  width: 80px;
+  font-size: 14px;
+}
+.address .info {
+  font-size: 14px;
+}
+.time {
+  padding: 6px 0;
+  display: flex
+}
+.time .label {
+  width: 80px;
+  font-size: 14px;
+}
+.time .info {
+  font-size: 14px;
+  color: #35d87f;
+}
+
+/* 按钮 */
+.btn-group {
+  width: 100%;
+  padding: 80rpx 0;
+}
+.btn-wrap {
+  padding: 0 30rpx;
+}
+

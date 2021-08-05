@@ -1,0 +1,61 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+}
+.res-title-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+.title-left {
+  width: 60%;
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 600;
+}
+.title-right {
+  width: 40%;
+  text-align: right;
+  padding-right: 20px;
+  font-weight: 600;
+}
+
+/* 列表 */
+.list-item {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.list-item-wrap {
+  padding: 0 20px;
+  position: relative;
+}
+.floor {
+  height: 20px;
+  line-height: 20px;
+  width: 50px;
+  text-align: center;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.meeting-title {
+  margin-bottom: 10px;
+}
+.status-kongxian{
+  color: #35d87f;
+}
+.status-zhanyong{
+  color: #ffba34;
+}
+.btn {
+  /* width: 140px; */
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  font-size: 12px;
+  padding: 5px 20px;
+}

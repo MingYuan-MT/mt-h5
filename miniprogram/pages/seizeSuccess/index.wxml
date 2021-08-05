@@ -1,0 +1,15 @@
+<!--抢占成功-->
+<view class="container">
+  <view class="notice-wrap">
+    <view class="notice-title">恭喜你！</view>
+    <view class="notice-content">抢占成功，您的会议室截止使用时间为2021-07-09 17:00</view>
+    <view class="notice-title">抓紧开会吧！</view>
+  </view>
+
+  <view class="btn-group">
+    <view class="btn-wrap">
+      <button type="default"  style="width: 100%;" plain>返回</button>
+    </view>
+  </view>
+
+</view>

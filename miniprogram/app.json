@@ -1,19 +1,11 @@
 {
   "pages": [
-    "pages/meetings/index",
-    "pages/index/index",
-    "pages/openapi/openapi",
-    "pages/databaseGuide/databaseGuide",
-    "pages/storageConsole/storageConsole",
-    "pages/userConsole/userConsole",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/flashDetermination/index",
+    "pages/flashDetermination/quickReservation/index",
+    "pages/flashDetermination/reservationSuccess/index",
+    "pages/seizeSuccess/index",
+    "pages/seizeCountdown/index",
+    "pages/meetings/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -24,15 +16,19 @@
   },
   "tabBar": {
     "color": "#808080",
-    "selectedColor": "#5B8EEA",
+    "selectedColor": "#097cff",
     "list": [
       {
         "pagePath": "pages/meetings/index",
-        "text": "会议"
+        "text": "会议",
+        "selectedIconPath": "images/code-db-inc-dec.png",  
+        "iconPath": "images/code-cloud-callback-config.png"
       },
       {
-        "pagePath": "pages/openapi/openapi",
-        "text": "我的"
+        "pagePath": "pages/seizeSuccess/index",
+        "text": "我的",
+        "selectedIconPath": "images/code-cloud-callback-config.png",  
+        "iconPath": "images/console-entrance.png"
       }
     ]
   },

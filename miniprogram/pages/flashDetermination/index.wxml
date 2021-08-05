@@ -1,0 +1,77 @@
+<!--闪定-->
+<view class="container">
+  <!-- tabs -->
+  <view class="tabs">
+    <view class="tab-item" bindtap="changeTab" data-index="1">
+      条件预订
+      <view class="{{tabActive === '1' ? 'active' : ''}}"></view>
+    </view>
+    <view class="tab-item" bindtap="changeTab" data-index="2">
+      摇摇预订
+      <view class="{{tabActive === '2' ? 'active' : ''}}"></view>
+    </view>
+    <view class="tab-item" bindtap="changeTab" data-index="3">
+      语音预订
+      <view class="{{tabActive === '3' ? 'active' : ''}}"></view>
+    </view>
+  </view>
+
+  <!-- tab==1，条件预定 -->
+  <block wx:if="{{tabActive === '1'}}">
+    <!-- form -->
+    <view class="w-form-item">
+      <view class="w-form-label">会议开始日期</view>
+      <picker class="w-form-content" mode="date" bindchange="changeStartDate">
+        <input class="weui-input" value="{{startDate}}"/>
+      </picker>
+    </view>
+
+    <view class="w-form-item">
+      <view class="w-form-label">会议结束日期</view>
+      <picker class="w-form-content" mode="date" bindchange="changeEndDate">
+        <input class="weui-input" value="{{endDate}}"/>
+      </picker>
+    </view>
+
+    <view class="w-form-item">
+      <view class="w-form-label">当前定位</view>
+      <view class="w-form-content">
+        <view class="tag {{tagActive === '1' ? 'tag-active' : ''}}" bindtap="changeTag" data-index="1">武汉</view>
+        <view class="tag {{tagActive === '2' ? 'tag-active' : ''}}" bindtap="changeTag" data-index="2">深圳</view>
+      </view>
+    </view>
+
+    <view class="w-form-item">
+      <view class="w-form-label">是否需要投影</view>
+      <view class="w-form-content">
+        <switch checked="{{switchTouyingChecked}}" bindchange="switchTouying" data-index="{{switchTouyingChecked}}" />
+      </view>
+    </view>
+
+    <view class="w-form-item">
+      <view class="w-form-label">是否需要签到</view>
+      <view class="w-form-content">
+        <switch checked="{{switchQiandaoChecked}}" bindchange="switchQiandao" data-index="{{switchQiandaoChecked}}" />
+      </view>
+    </view>
+
+    <view class="btn-group">
+      <view class="btn-wrap">
+        <button class="btn-sure" type="primary" size="default" style="width: 100%;margin-bottom: 30rpx;">确认抢占</button>
+      </view>
+    </view>
+  </block>
+
+  <!-- tab==2;摇摇预定 -->
+  <block wx:if="{{tabActive === '2'}}">
+    <view>摇摇预定</view>
+  </block>
+  
+  <!-- tab==3;语音预定 -->
+  <block wx:if="{{tabActive === '3'}}">
+    <view>语音预定</view>
+  </block>
+
+
+
+</view>
