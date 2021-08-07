@@ -28,6 +28,7 @@ Page({
       return
     }
     let token = wx.getStorageSync('token');
+    console.log('token',token)
     let that = this;
     wx.request({
       url: app.apiDomain + '/v1/seize/metting-info',
@@ -37,7 +38,7 @@ Page({
       method: 'GET',
       header: {
         'content-type': 'application/json',
-        'Authorization': "Bearer " + token.token,
+        'Authorization': "Bearer " + token,
       },
       success(res) {
         let result = res.data;
@@ -89,8 +90,8 @@ Page({
           }
         }else{
           wx.showToast({
-            title: result.error,
-            icon: 'success',
+            title: result.message,
+            icon: 'error',
             duration: 2000
           })
         }
@@ -137,7 +138,7 @@ Page({
       method: 'POST',
       header: {
         'content-type': 'application/json',
-        'Authorization': "Bearer " + token.token,
+        'Authorization': "Bearer " + token,
       },
       success(res) {
         let result = res.data;
