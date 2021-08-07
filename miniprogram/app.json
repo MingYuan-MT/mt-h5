@@ -3,8 +3,8 @@
     "pages/login/index",
     "pages/seize/seizeCountdown/index",    
     "pages/seize/index",
-    "pages/me/wasteRecord/index",
     "pages/me/index",
+    "pages/me/wasteRecord/index",
     "pages/me/myMeets/index",
     "pages/flashDetermination/index",
     "pages/flashDetermination/reservationSuccess/index",
@@ -33,7 +33,7 @@
         "iconPath": "images/sd2.png"
       },
       {
-        "pagePath": "pages/seize/index",
+        "pagePath": "pages/seize/toSeize/index",
         "text": "抢占",
         "selectedIconPath": "images/qz.png",  
         "iconPath": "images/qz2.png"
