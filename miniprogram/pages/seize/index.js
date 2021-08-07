@@ -8,17 +8,32 @@ Page({
     startDate: '',
     endDate: '',
     originPerson: '',
-    meetingTitle: ''
+    meetingTitle: '',
+    can_seize: false // 是否可抢占
   },
 
-  onLoad: function() {
-    let id = 6;
+  onLoad: function(options) {
+    let scene = decodeURIComponent(options.scene);
+    let room_id = 0
+    console.log(scene)
+    if(scene != 'undefined'){
+      let params=scene.split("&")[1];
+      room_id=params.split('=')[1];
+    }
+    if(room_id <= 0){
+      wx.showToast({
+        title: '参数错误！',
+        icon: 'error',
+        duration: 2000
+      })
+      return
+    }
     let token = wx.getStorageSync('token');
     let that = this;
     wx.request({
       url: app.apiDomain + '/v1/seize/metting-info',
       data: {
-        id: id
+        id: room_id
       },
       method: 'GET',
       header: {
@@ -46,13 +61,12 @@ Page({
               }
             })
           }else{
-            console.log(result.data.floor)
             let room_info = ''
             room_info = result.data.floor + '楼-' + result.data.name  + '（'
             if(result.data.room_uses){
               room_info = room_info + result.data.room_uses
             }
-            room_info = room_info + '预计' + result.data.capacity + '人）';
+            room_info = room_info + ' 预计' + result.data.capacity + '人）';
             that.setData({
               room_info: room_info,
               startDate: result.data.metting_start_time,
@@ -61,6 +75,9 @@ Page({
               meetingTitle:result.data.subject
             });
             if(result.data.seize_code != 0){
+              that.setData({
+                can_seize:true
+              })
               wx.showToast({
                 title: '会议室不可抢占',
                 icon: 'error',
@@ -77,11 +94,6 @@ Page({
         }
       }
     })
-    
-    // that.setData({
-    //   startDate: that.getNowTime(new Date()),
-    //   endDate: that.getNextOneHourTime(1),
-    // })
   },
 
   bindPickerChange: function(e) {
