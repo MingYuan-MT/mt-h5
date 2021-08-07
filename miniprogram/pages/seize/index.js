@@ -13,14 +13,14 @@ Page({
   },
 
   onLoad: function(options) {
-    console.log('options', options)
-    let scene = decodeURIComponent(options.scene);
-    let room_id = 0
-    console.log(scene)
-    if(scene != 'undefined'){
-      let params=scene.split("&")[1];
-      room_id=params.split('=')[1];
-    }
+    // console.log('options', options)
+    // let scene = decodeURIComponent(options.scene);
+    let room_id = options.room_id
+    // console.log(scene)
+    // if(scene != 'undefined'){
+    //   let params=scene.split("&")[1];
+    //   room_id=params.split('=')[1];
+    // }
     if(room_id <= 0){
       wx.showToast({
         title: '参数错误！',

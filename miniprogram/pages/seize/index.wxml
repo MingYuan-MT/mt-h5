@@ -9,15 +9,21 @@
 
   <view class="w-form-item">
     <view class="w-form-label">会议开始时间</view>
-    <!-- <picker class="w-form-content" mode="time" bindchange="changeStartDate"> -->
+    <view class="w-form-content">
       <input class="weui-input" disabled placeholder="请选择会议开始时间" value="{{startDate}}"/>
+    </view>
+    <!-- <picker class="w-form-content" mode="time" bindchange="changeStartDate"> -->
+      <!-- <input class="weui-input" disabled placeholder="请选择会议开始时间" value="{{startDate}}"/> -->
     <!-- </picker> -->
   </view>
 
   <view class="w-form-item">
     <view class="w-form-label">会议结束时间</view>
+      <view class="w-form-content">
+        <input class="weui-input" disabled placeholder="请选择会议结束时间" value="{{endDate}}"/>
+      </view>
     <!-- <picker class="w-form-content" mode="time" bindchange="changeEndDate"> -->
-      <input class="weui-input" disabled placeholder="请选择会议结束时间" value="{{endDate}}"/>
+      <!-- <input class="weui-input" disabled placeholder="请选择会议结束时间" value="{{endDate}}"/> -->
     <!-- </picker> -->
   </view>
 
