@@ -197,6 +197,5 @@ Page({
   touchEnd: function() {
     manager.stop()
       }
-    })
-  },
-})
+  })
+

@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/me/myMeets/index",
-    "pages/me/wasteRecord/index",
-    "pages/flashDetermination/index",
     "pages/seize/index",
+    "pages/me/wasteRecord/index",
     "pages/login/index",
+    "pages/me/myMeets/index",
     "pages/flashDetermination/index",
     "pages/home/index",
     "pages/seize/seizeCountdown/index",
