@@ -15,7 +15,6 @@ Page({
   onLoad: function(options) {
     let scene = decodeURIComponent(options.scene);
     let room_id = 0
-    console.log(scene)
     if(scene != 'undefined'){
       let params=scene.split("&")[1];
       room_id=params.split('=')[1];
@@ -72,7 +71,10 @@ Page({
               startDate: result.data.metting_start_time,
               endDate: result.data.metting_end_time,
               originPerson: result.data.moderator,
-              meetingTitle:result.data.subject
+              meetingTitle:result.data.subject,
+              meeting_id:result.data.metting_id,
+              room_id:result.data.room_id,
+              subject:result.data.subject
             });
             if(result.data.seize_code != 0){
               that.setData({
@@ -121,11 +123,38 @@ Page({
     let nextOne = new Date(date.setTime(date1 + hour * 3600000));
     return that.getNowTime(nextOne)
   },
+  // 确认抢占
   handleSure: function() {
-    wx.navigateTo({
-      // url: '/pages/seize/seizeSuccess/index'
-      url: '/pages/seize/seizeCountdown/index'
-    })
+    let token = wx.getStorageSync('token');
+    let that = this,room_id = that.data.room_id,meeting_id = that.data.meeting_id,subject = that.data.subject;
+    wx.request({
+      url: app.apiDomain + '/v1/seize/confirm',
+      data: {
+        room_id: room_id,
+        metting_id: meeting_id,
+        subject: subject,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + token.token,
+      },
+      success(res) {
+        let result = res.data;
+        if(result.code == 200){
+          let seize_end_time = result.data.seize_end_time
+          wx.navigateTo({
+            url: './seizeSuccess/index?time=' + seize_end_time,
+          })
+        }else{
+          wx.showToast({
+            title: result.error,
+            icon: 'error',
+            duration: 2000
+          })
+        }
+      }
+    });
   },
   back: function() {
     wx.navigateBack({

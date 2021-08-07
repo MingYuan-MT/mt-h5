@@ -3,11 +3,14 @@ const app = getApp()
 
 Page({
   data: {
-    
+    end_time: ''
   },
 
-  onLoad: function() {
-
+  onLoad: function(option) {
+    let end_time = option.time 
+    this.setData({
+      end_time:end_time
+    })
   },
 
   back: function() {
