@@ -1,16 +1,17 @@
 {
   "pages": [
     "pages/login/index",
-    "pages/seize/index",
     "pages/me/wasteRecord/index",
+    "pages/seize/index",
+    "pages/me/index",
     "pages/me/myMeets/index",
     "pages/flashDetermination/index",
     "pages/flashDetermination/reservationSuccess/index",
     "pages/flashDetermination/quickReservation/index",
     "pages/home/index",
-    "pages/seize/index",
     "pages/seize/seizeCountdown/index",
     "pages/seize/seizeSuccess/index",
+    "pages/sign/index",
     "pages/sign/signQRCode/index"
   ],
   "window": {
