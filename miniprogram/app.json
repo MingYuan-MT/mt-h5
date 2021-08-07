@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/index",
+    "pages/flashDetermination/index",
     "pages/home/index",
     "pages/seize/index",
     "pages/seize/seizeCountdown/index",
@@ -11,7 +12,6 @@
     "pages/sign/index",
     "pages/sign/signDetails/index",
     "pages/sign/signQRCode/index",
-    "pages/flashDetermination/index",
     "pages/flashDetermination/quickReservation/index",
     "pages/flashDetermination/reservationSuccess/index"
   ],
