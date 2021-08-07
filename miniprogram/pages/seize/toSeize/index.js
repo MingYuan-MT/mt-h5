@@ -12,8 +12,9 @@ Page({
   scanSeize: function() {
     wx.scanCode({
       success: (res) => {
+        let params=res.path.split("&")
         wx.navigateTo({
-          url: '/'+ res.path
+          url: '/pages/seize/index?' + params[1]
         })
       },
       fail: (err) => {
