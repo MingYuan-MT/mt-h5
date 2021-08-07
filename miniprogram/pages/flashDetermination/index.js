@@ -2,8 +2,7 @@
 const app = getApp()
 var plugin = requirePlugin("WechatSI")
 let manager = plugin.getRecordRecognitionManager()
-let _animation;
-let _animationIndex;
+let isYaoYiYao = false
 Page({
   data: {
     tabActive: '2',
@@ -15,11 +14,13 @@ Page({
     tagActive: '1',
     switchTouyingChecked: true,
     switchQiandaoChecked: true,
-    isShow: false,
+    isShow: true,
     show: false,
 
     // 语音内容
-    voiceData: ''
+    voiceData: '',
+    isStarting: false,
+    nickName: ''
   },
 
   onLoad: function() {
@@ -32,60 +33,60 @@ Page({
     })
     console.log('22', that.data.meetDate)
   },
+  onHide: function() {
+    let that = this
+    that.setData({
+      timer: null
+    })
+  },
   onShow: function() {
     let that = this
-    // 初始化动画
-    _animation = wx.createAnimation({
-      duration: 500,
-      timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
-      delay: 0,
-      transformOrigin: '50% 50% 0'
+    let token = wx.getStorageSync('token');
+    let userInfo = wx.getStorageSync('userInfo')
+    that.setData({
+      nickName: userInfo.nickName
     })
-    // 初始化重力感应
+    console.log('token', token)
     wx.onAccelerometerChange(function (e) {
-      console.log('isshow', that.data.isShow)
       if (!that.data.isShow) {
         return
       }
       if (e.x > 1 && e.y > 1) {
-        this.startAnimationInterval()
-        wx.showToast({
-          title: '摇一摇成功',
-          icon: 'success',
-          duration: 2000
-        })
+        if (!isYaoYiYao) {
+          isYaoYiYao = true
+          wx.request({
+            url: app.apiDomain + '/v1/reserve/shake-lists',
+            data: {
+              region: '武汉'
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json',
+              'Authorization': "Bearer " + token,
+            },
+            success(res) {
+              console.log('yaoyiyao返回：', res)
+              isYaoYiYao = false
+              that.setData({
+                isShow: false
+              })
+              wx.setStorageSync('meetsData', res.data.data.B3)
+              wx.navigateTo({
+                url: '/pages/flashDetermination/quickReservation/index'
+              })
+              
+              // wx.showToast({
+              //   title: '摇一摇成功',
+              //   icon: 'success',
+              //   duration: 2000
+              // })
+            }
+          })
+
+        }
+        
       }
     })
-  },
-  /**
-  * 实现image旋转动画，每次旋转 120*n度
-  */
-  rotateAni: function (n) {
-    _animation.rotate(120 * (n)).step()
-    this.setData({
-      animation: _animation.export()
-    })
-  },
-
-  /**
-   * 开始旋转
-   */
-  startAnimationInterval: function () {
-  var that = this;
-    that.rotateAni(++_loadImagePathIndex); // 进行一次旋转
-      _animationIntervalId = setInterval(function () {
-        that.rotateAni(++_loadImagePathIndex);
-    },  500); // 没间隔_ANIMATION_TIME进行一次旋转
-  },
-
-  /**
-   * 停止旋转
-   */
-  stopAnimationInterval: function () {
-    if (_animationIntervalId> 0) {
-        clearInterval(_animationIntervalId);
-        _animationIntervalId = 0;
-    }
   },
   getNowDate: function(date){
     // return date.toLocaleDateString()
@@ -95,7 +96,10 @@ Page({
     return [year, month,day].join('-')
   },
   getNowTime: function(time){
-    return time.toLocaleTimeString()
+    // return time.toLocaleTimeString()
+    let hour = time.getHours() >= 10 ? time.getHours() : '0' + time.getHours()
+    let minute = time.getMinutes() >= 10 ? time.getMinutes() : '0' + time.getMinutes()
+    return [hour, minute].join(':')
   },
   getNextOneHourTime: function(hour) {
     let that = this
@@ -103,10 +107,6 @@ Page({
     var date1 = new Date().getTime();	// 获取当前时间戳
     let nextOne = new Date(date.setTime(date1 + hour * 3600000));
     return that.getNowTime(nextOne)
-  },
-  onDisplay: function() {
-    console.log(111)
-    this.setData({ show: true });
   },
   changeTab: function(e) {
     console.log(e)
@@ -167,6 +167,35 @@ Page({
       switchQiandaoChecked: e.detail.value
     })
   },
+  // 确认
+  handleSure: function() {
+    let that = this
+    let token = wx.getStorageSync('token');
+    wx.request({
+      url: app.apiDomain + '/v1/reserve/condition-lists',
+      data: {
+        start_time: that.data.meetDate + ' ' + that.data.startTime,
+        end_time: that.data.meetDate + ' ' + that.data.endTime,
+        region: '武汉',
+        is_shadow: that.data.switchTouyingChecked == true ? 1 : 0,
+        is_need_sigin: that.data.switchQiandaoChecked == true ? 1 :0
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + token,
+      },
+      success(res) {
+        wx.navigateTo({
+          url: '/pages/flashDetermination/quickReservation/index'
+        })
+        wx.setStorageSync('meetsData', res.data.data.B3)
+      }
+    })
+  },
+
+
+
   // 初始化语音监听事件
   initRecord: function() {
     let that = this
@@ -191,11 +220,39 @@ Page({
   // 语音开始
   touchStart: function() {
     console.log('start')
+    let that = this
     manager.start({duration:30000, lang: "zh_CN"})
+    that.setData({
+      isStarting: true
+    })
   },
   // 语音结束
   touchEnd: function() {
+    let that = this
     manager.stop()
-      }
-  })
+    that.setData({
+      isStarting: false
+    })
 
+    let token = wx.getStorageSync('token');
+    console.log('token', token)
+    wx.request({
+      url: app.apiDomain + '/v1/reserve/voice-lists',
+      data: {
+        text: that.data.voiceData
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + token,
+      },
+      success(res) {
+        console.log('语音返回：', res)
+        wx.setStorageSync('meetsData', res.data.data.B3)
+        wx.navigateTo({
+          url: '/pages/flashDetermination/quickReservation/index'
+        })
+      }
+    })
+  }
+})

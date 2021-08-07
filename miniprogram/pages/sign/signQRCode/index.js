@@ -3,9 +3,16 @@ const app = getApp()
 
 Page({
   data: {
-    
+    qrCode: ''
   },
 
+  onShow: function() {
+    let that = this
+    let qrCode = wx.getStorageSync('signQRCode')
+    that.setData({
+      qrCode: qrCode
+    })
+  },
   onLoad: function() {
 
   },

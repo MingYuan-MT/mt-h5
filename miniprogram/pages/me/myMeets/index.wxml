@@ -4,25 +4,25 @@
     <!-- <view class="title">我创建需要签到的会议</view> -->
     <!-- 例会列表 -->
     <view class="list-wrap">
-      <view class="list-item">
+      <view class="list-item" wx:for="{{list}}" wx:for-item="item">
         <view class="item-top">
-          <view class="meet-type">例会</view>
+          <view class="meet-type">{{item.subject}}</view>
           <view class="meet-status">
-            <view class="status-flag">未开始</view>
+            <view class="status-flag">{{item.status}}</view>
           </view>
         </view>
         <view class="item-info">
           <view class="info-content">
             <view class="info-label">会议地点</view>
-            <view class="info-detail">百花谷</view>
+            <view class="info-detail">{{item.name}}</view>
           </view>
           <view class="info-content">
             <view class="info-label">会议时间</view>
-            <view class="info-detail">2021年8月2日（星期一） 17:00-18:00</view>
+            <view class="info-detail">{{item.date}}（{{item.week}}） {{item.metting_start_time}}-{{item.metting_end_time}}</view>
           </view>
         </view>
         <view class="item-bottom">
-          <view bindtap="toSignQRCode" class="sign-btn border-right">编辑会议室</view>
+          <view bindtap="toSignQRCode" class="sign-btn border-right">编辑会议</view>
           <view bindtap="toSignDetails" class="sign-btn">取消预定</view>
         </view>
       </view>
