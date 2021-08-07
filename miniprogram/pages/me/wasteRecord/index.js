@@ -18,7 +18,7 @@ Page({
       method: 'GET',
       header: {
         'content-type': 'application/json',
-        'Authorization': "Bearer " + token.token,
+        'Authorization': "Bearer " + token,
       },
       success(res) {
         let result = res.data;

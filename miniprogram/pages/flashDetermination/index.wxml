@@ -20,7 +20,7 @@
   <block wx:if="{{tabActive === '1'}}">
     <!-- form -->
     <view class="w-form-title" style="margin-top: 10px;margin-bottom: 10px;">
-      <view>{{nickName}}预定的会议</view>
+      <view style="margin-left: 20px;">{{nickName}}预定的会议</view>
     </view>
 
     <view class="w-form-item">
@@ -92,8 +92,8 @@
   <block wx:if="{{tabActive === '3'}}">
     <view class="y-wrap">
       <view class="y-pic">
-        <image wx:if="{{!isStarting}}" class="y-image" src="../../images/v1.png"></image>
-        <image wx:if="{{isStarting}}" class="y-image" src="../../images/v2.png"></image>
+        <image wx:if="{{!isStarting}}" class="y-image-yuyin" src="../../images/v1.png"></image>
+        <image wx:if="{{isStarting}}" class="y-image-yuyin" src="../../images/v2.png"></image>
       </view>
       <view class="y-info">想定哪里对我讲</view>
       <button type="default" plain bindtouchstart="touchStart" bindtouchend="touchEnd">长按预定会议室</button>

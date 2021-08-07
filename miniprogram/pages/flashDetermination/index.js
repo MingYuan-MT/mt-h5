@@ -41,6 +41,15 @@ Page({
   },
   onShow: function() {
     let that = this
+    if (that.data.tabActive !== '2') {
+      that.setData({
+        isShow: false
+      })
+    } else {
+      that.setData({
+        isShow: true
+      })
+    }
     let token = wx.getStorageSync('token');
     let userInfo = wx.getStorageSync('userInfo')
     that.setData({
@@ -54,6 +63,9 @@ Page({
       if (e.x > 1 && e.y > 1) {
         if (!isYaoYiYao) {
           isYaoYiYao = true
+          wx.showLoading({
+            title: '加载中'
+          })
           wx.request({
             url: app.apiDomain + '/v1/reserve/shake-lists',
             data: {
@@ -71,15 +83,11 @@ Page({
                 isShow: false
               })
               wx.setStorageSync('meetsData', res.data.data.B3)
+              wx.hideLoading()
               wx.navigateTo({
                 url: '/pages/flashDetermination/quickReservation/index'
               })
-              
-              // wx.showToast({
-              //   title: '摇一摇成功',
-              //   icon: 'success',
-              //   duration: 2000
-              // })
+
             }
           })
 
@@ -248,10 +256,18 @@ Page({
       },
       success(res) {
         console.log('语音返回：', res)
-        wx.setStorageSync('meetsData', res.data.data.B3)
-        wx.navigateTo({
-          url: '/pages/flashDetermination/quickReservation/index'
-        })
+        if (res.data.code === 200) {
+          wx.setStorageSync('meetsData', res.data.data.B3)
+          wx.navigateTo({
+            url: '/pages/flashDetermination/quickReservation/index'
+          })
+        } else {
+          wx.showToast({
+            title: '语音识别失败！',
+            icon: 'error',
+            duration: 2000
+          })
+        }
       }
     })
   }
