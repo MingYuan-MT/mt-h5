@@ -43,7 +43,7 @@
   },
   "appid": "wx2d51cf0b6cb7a6bd",
   "projectname": "meeting",
-  "libVersion": "2.14.1",
+  "libVersion": "2.19.0",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {

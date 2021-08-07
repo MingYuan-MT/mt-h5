@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/me/index",
     "pages/login/index",
-    "pages/sign/index",
-    "pages/sign/signDetails/index",
+    "pages/seize/index",
+    "pages/me/wasteRecord/index",
+    "pages/me/myMeets/index",
     "pages/flashDetermination/index",
     "pages/flashDetermination/reservationSuccess/index",
     "pages/flashDetermination/quickReservation/index",
