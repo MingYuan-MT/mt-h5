@@ -72,7 +72,7 @@
 
     <view class="btn-group">
       <view class="btn-wrap">
-        <button class="btn-sure" type="primary" size="default" style="width: 100%;margin-bottom: 30rpx;">确认抢占</button>
+        <button class="btn-sure" bindtap="handleSure" type="primary" size="default" style="width: 100%;margin-bottom: 30rpx;">确认</button>
       </view>
     </view>
   </block>
