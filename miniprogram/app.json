@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/seize/index",
     "pages/login/index",
+    "pages/seize/index",
     "pages/seize/seizeCountdown/index",    
     "pages/me/index",
     "pages/me/wasteRecord/index",
