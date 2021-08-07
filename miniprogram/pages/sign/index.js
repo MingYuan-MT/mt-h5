@@ -6,7 +6,7 @@ Page({
     list: []
   },
 
-  onLoad: function() {
+  onShow: function() {
     this.getSignList()
   },
   getSignList: function() {
