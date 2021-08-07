@@ -1,0 +1,25 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+}
+
+.content-wrap {
+  padding: 50px 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}
+.pic {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #d8d8d8;
+  margin: 20px auto;
+}
+.notice {
+  margin-bottom: 80px;
+}

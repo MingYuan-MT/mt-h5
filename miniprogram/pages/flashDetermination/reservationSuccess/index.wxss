@@ -2,6 +2,7 @@
 .container {
   width: 100%;
   padding: 30px;
+  background: #F8F9FD;
 }
 
 .content-wrap {

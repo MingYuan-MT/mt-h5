@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "闪定"
+  "usingComponents": {
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon"
+  },
+  "navigationBarTitleText": "会议预定"
 }

@@ -1,0 +1,83 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  padding: 0 10px 20px;
+}
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/* 例会列表 */
+.list-wrap {
+  padding: 15px;
+}
+.list-item {
+  border: 1px solid #d8d8d8;
+  /* padding: 10px; */
+  border-radius: 3px;
+}
+.item-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.meet-type {
+  width: 50%;
+  text-align: left;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.meet-status {
+  width: 50%;
+  text-align: right;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.status-flag {
+  padding: 8px 15px;
+  background-color: cornflowerblue;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.item-info {
+  padding: 25px;
+}
+.info-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+.info-label {
+  width: 100px;
+}
+.info-detail {
+  flex: 1;
+}
+
+.item-bottom {
+  border-top: 1px solid #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-btn {
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+}
+.border-right {
+  border-right: 1px solid #d8d8d8;
+}

@@ -15,5 +15,6 @@ App({
     }
 
     this.globalData = {}
-  }
+  },
+  apiDomain: 'https://backend-1136261-1306746440.ap-shanghai.run.tcloudbase.com'
 })

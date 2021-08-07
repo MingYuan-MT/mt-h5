@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="info-wrap">
+    <view class="cur-month-count-wrap border">
+      <view class="cur-month-title">本月浪费次数</view>
+      <view class="cur-month-count">2次</view>
+    </view>
+    <view class="cur-month-count-wrap">
+      <view class="cur-month-title">全年浪费次数</view>
+      <view class="cur-month-count">12次</view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="list-item">
+      <view class="notice">你预订的会议室：风陵渡被XXX抢占成功</view>
+      <view class="date">2021-08-06</view>
+    </view>
+  </view>
+  
+
+</view>

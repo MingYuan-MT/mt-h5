@@ -1,0 +1,11 @@
+<!--会议信息确认-->
+<view class="container">
+  <view class="content-wrap">
+    <view class="title">会议二维码</view>
+    <view class="pic"></view>
+    <view class="notice">打开企业微信，扫描二维码完成签到</view>
+    <view class="btn-wrap">
+      <button type="default" style="width: 100%;" plain>分享图片</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<!--会议信息确认-->
+<view class="container">
+  <view class="content-wrap">
+    <view class="title">已签到人数</view>
+    <view class="count">88</view>
+
+    <view class="signed-info">
+      <view class="tag">已签到</view>
+      <view class="list-wrap">
+        <view class="list-item">
+          <view class="pic"></view>
+          <view class="info">
+            <view class="name">张三</view>
+            <view class="job">研发工程师</view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="pic"></view>
+          <view class="info">
+            <view class="name">张三</view>
+            <view class="job">研发工程师</view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="pic"></view>
+          <view class="info">
+            <view class="name">张三</view>
+            <view class="job">研发工程师</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="no-signed-info">
+      <view class="tag">未签到</view>
+      <view class="list-wrap">
+        <view class="list-item">
+          <view class="pic"></view>
+          <view class="info">
+            <view class="name">张三</view>
+            <view class="job">研发工程师</view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="pic"></view>
+          <view class="info">
+            <view class="name">张三</view>
+            <view class="job">研发工程师</view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="pic"></view>
+          <view class="info">
+            <view class="name">张三</view>
+            <view class="job">研发工程师</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

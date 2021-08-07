@@ -1,6 +1,7 @@
 /**index.wxss**/
 .container {
   width: 100%;
+  background: #F8F9FD;
 }
 .res-title-wrap {
   width: 100%;

@@ -1,6 +1,7 @@
 /**index.wxss**/
 .container {
   width: 100%;
+  background: #F8F9FD;
 }
 
 .tabs {
@@ -8,23 +9,41 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background: #fff;
+  box-shadow: 0px 6px 12px 0px rgba(129, 160, 202, 0.1);
 }
 .tab-item {
   position: relative;
-  padding: 10px 0;
-  font-weight: bold;
+  padding: 15px 0;
+  color: #b8b8b8;
+  font-size: 16px;
 }
 .active {
-  width: 30px;
+  width: 70px;
   background: dodgerblue;
   height: 3px;
   position: absolute;
   left: 50%;
-  margin-left: -15px;
-  bottom: 0;
+  margin-left: -35px;
+  bottom: -1px;
+}
+.item-active {
+  color: black;
+  font-weight: bold;
 }
 
 /* form */
+.w-form-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  padding-left: 20px;
+  font-weight: bold;
+}
 .w-form-item {
   width: 100%;
   height: 50px;
@@ -33,17 +52,30 @@
   justify-content: center;
   align-items: center;
   text-align: right;
-  border-bottom: 1px solid #d9d9d9;
+  /* border-bottom: 1px solid #d9d9d9; */
+  background: #fff;
+  margin: 10px 0;
 }
 .w-form-label {
   width: 110px;
 }
+
 .w-form-content {
   flex: 1;
   padding: 0;
   text-align: left;
   padding: 0 10px 0 30px;
   display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.w-form-swatch {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.weui-input {
+  text-align: right;
 }
 .tag {
   height: 24px;
@@ -65,3 +97,25 @@
 .btn-wrap {
   padding: 0 30rpx;
 }
+
+
+/* 摇一摇start */
+.y-wrap {
+  width: 80%;
+  padding: 50px 10px;
+}
+.y-pic {
+  width: 100%;
+  height: 240px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.y-info {
+  text-align: center;
+  margin-top: 20px;
+}
+/* 摇一摇end */

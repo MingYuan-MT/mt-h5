@@ -1,0 +1,16 @@
+<!--抢占倒计时-->
+<view class="container">
+  <view class="notice-wrap">
+    <view class="notice-content">当前要抢占的会议室即将进行的会议开始时间为2021-07-09  16:00</view>
+    <view class="notice-title">16:10以后才可进行会议室抢占</view>
+    <view class="notice-title">抢占倒计时</view>
+    <view class="notice-time">03:21</view>
+  </view>
+
+  <view class="btn-group">
+    <view class="btn-wrap">
+      <button bindtap="back" type="default" style="width: 100%;" plain>返回</button>
+    </view>
+  </view>
+
+</view>

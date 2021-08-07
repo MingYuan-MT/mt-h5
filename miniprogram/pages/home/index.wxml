@@ -1,0 +1,14 @@
+<!--会议信息确认-->
+<view class="container">
+  <view class="btn-group">
+    <view class="btn-wrap">
+      <button type="default" bindtap="handleSeize" style="width: 80%;margin-bottom: 100rpx;padding: 20px 0;" plain>抢占</button>
+    </view>
+    <view class="btn-wrap">
+      <button bindtap="handleReserve" type="default" style="width: 80%;margin-bottom: 100rpx;padding: 20px 0;" plain>闪定</button>
+    </view>
+    <view class="btn-wrap">
+      <button bindtap="handleSign" type="default" style="width: 80%;margin-bottom: 0rpx;padding: 20px 0;" plain>签到</button>
+    </view>
+  </view>
+</view>

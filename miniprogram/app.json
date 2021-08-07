@@ -1,37 +1,56 @@
 {
   "pages": [
+    "pages/login/index",
+    "pages/home/index",
+    "pages/seize/index",
+    "pages/seize/seizeCountdown/index",
+    "pages/seize/seizeSuccess/index",
+    "pages/me/index",
+    "pages/me/wasteRecord/index",
+    "pages/me/myMeets/index",
+    "pages/sign/index",
+    "pages/sign/signDetails/index",
+    "pages/sign/signQRCode/index",
     "pages/flashDetermination/index",
     "pages/flashDetermination/quickReservation/index",
-    "pages/flashDetermination/reservationSuccess/index",
-    "pages/seizeSuccess/index",
-    "pages/seizeCountdown/index",
-    "pages/meetings/index"
+    "pages/flashDetermination/reservationSuccess/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#abcdef",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#007aff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#808080",
     "selectedColor": "#097cff",
     "list": [
       {
-        "pagePath": "pages/meetings/index",
+        "pagePath": "pages/home/index",
         "text": "会议",
-        "selectedIconPath": "images/code-db-inc-dec.png",  
-        "iconPath": "images/code-cloud-callback-config.png"
+        "selectedIconPath": "images/meet-s.png",  
+        "iconPath": "images/meet.png"
       },
       {
-        "pagePath": "pages/seizeSuccess/index",
+        "pagePath": "pages/me/index",
         "text": "我的",
-        "selectedIconPath": "images/code-cloud-callback-config.png",  
-        "iconPath": "images/console-entrance.png"
+        "selectedIconPath": "images/my-s.png",  
+        "iconPath": "images/my.png"
       }
     ]
   },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.1",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需获取当前位置"
+    }
+  }
 }

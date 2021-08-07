@@ -1,0 +1,64 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+}
+
+.content-wrap {
+  width: 100%;
+  padding: 50px 20px;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.count {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.signed-info, .no-signed-info {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.tag {
+  width: 60px;
+  padding: 5px 20px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  text-align: center;
+}
+.list-wrap {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.list-item {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+.pic {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+}
+.info {
+  flex: 1;
+  padding: 0 10px;
+}
+.name {
+  font-weight: bold;
+  font-size: 13px;
+}
+.job {
+  color: #a8a8a8;
+  font-size: 13px;
+}
