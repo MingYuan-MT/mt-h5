@@ -10,7 +10,6 @@ Page({
   onLoad: function() {
     let token = wx.getStorageSync('token');
     let that = this;
-    console.log(token)
     wx.request({
       url: app.apiDomain + '/v1/my/use-log',
       data: {

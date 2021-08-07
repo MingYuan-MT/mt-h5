@@ -2,8 +2,8 @@
 <view class="container">
   <view class="w-form-item">
     <view class="w-form-label">会议室</view>
-    <picker class="w-form-content" bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{array}}">
-      <input class="weui-input" placeholder="请输入会议室" value="{{array[index].name}}"/>
+    <picker class="w-form-content" bindchange="bindPickerChange" range-key="name">
+      <input class="weui-input" placeholder="请输入会议室" value="{{room_info}}"/>
     </picker>
   </view>
 
