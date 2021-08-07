@@ -81,7 +81,8 @@
   <block wx:if="{{tabActive === '2'}}">
     <view class="y-wrap">
       <view class="y-pic">
-        <image class="y-image" src="../../images/y1.png"></image>
+        <image wx:if="{{!isChangeImage}}" class="y-image" src="../../images/y1.png"></image>
+        <image wx:if="{{isChangeImage}}" class="y-image" src="../../images/y2.png"></image>
       </view>
       <view class="y-info">迅速查找所在位置1小时内可使用会议室</view>
     </view>
@@ -90,9 +91,12 @@
   <!-- tab==3;语音预定 -->
   <block wx:if="{{tabActive === '3'}}">
     <view class="y-wrap">
-      <view class="y-pic">{{voiceData}}</view>
+      <view class="y-pic">
+        <image wx:if="{{!isStarting}}" class="y-image" src="../../images/v1.png"></image>
+        <image wx:if="{{isStarting}}" class="y-image" src="../../images/v2.png"></image>
+      </view>
       <view class="y-info">想定哪里对我讲</view>
-      <button type="default" plain bindtouchstart="touchStart" bindtouchend="touchEnd">录音</button>
+      <button type="default" plain bindtouchstart="touchStart" bindtouchend="touchEnd">长按预定会议室</button>
     </view>
   </block>
 

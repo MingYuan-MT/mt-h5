@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/login/index",
     "pages/flashDetermination/index",
+    "pages/login/index",
     "pages/home/index",
     "pages/seize/index",
     "pages/seize/seizeCountdown/index",
