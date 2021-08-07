@@ -3,8 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    avatarUrl: '',
-    isAuth: false
+    avatarUrl: ''
   },
   /**
   * 生命周期函数--监听页面加载
@@ -41,18 +40,16 @@ Page({
       // 获取到用户的信息了，打印到控制台上看下
       console.log("用户的信息如下：");
       console.log(e.detail.userInfo);
-      // wx.setStorageSync('userInfo', e.detail.userInfo);
-      // wx.switchTab({
-      //   url: '/pages/home/index'
-      // })
+      
       wx.login({
         success (res) {
           if (res.code) {
             let code = res.code
             wx.request({
-              url: app.apiDomain + '/v1/login/wechat-auth',
+              url: app.apiDomain + '/v1/login/login',
               data: {
-                code
+                code,
+                nick_name: e.detail.userInfo.nickName
               },
               method: 'POST',
               header: {
@@ -60,8 +57,10 @@ Page({
               },
               success(res) {
                 console.log('res44', res)
-                that.setData({
-                  isAuth: true
+                wx.setStorageSync('userInfo', e.detail.userInfo);
+                wx.setStorageSync('token', res.data.data);
+                wx.switchTab({
+                  url: '/pages/home/index'
                 })
               }
             })
@@ -84,10 +83,6 @@ Page({
         }
       });
     }
-  },
-
-  getPhoneNumber: function(e) {
-    console.log(e)
   }
 
 })

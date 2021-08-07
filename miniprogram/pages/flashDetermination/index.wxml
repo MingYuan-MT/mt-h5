@@ -80,7 +80,9 @@
   <!-- tab==2;摇摇预定 -->
   <block wx:if="{{tabActive === '2'}}">
     <view class="y-wrap">
-      <view class="y-pic">摇一摇</view>
+      <view class="y-pic">
+        <image class="y-image" src="../../images/y1.png"></image>
+      </view>
       <view class="y-info">迅速查找所在位置1小时内可使用会议室</view>
     </view>
   </block>

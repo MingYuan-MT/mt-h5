@@ -5,6 +5,7 @@
     "pages/flashDetermination/index",
     "pages/seize/index",
     "pages/login/index",
+    "pages/flashDetermination/index",
     "pages/home/index",
     "pages/seize/seizeCountdown/index",
     "pages/seize/seizeSuccess/index",
