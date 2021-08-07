@@ -155,5 +155,7 @@ Page({
   // 语音结束
   touchEnd: function() {
     manager.stop()
-  }
+      }
+    })
+  },
 })
