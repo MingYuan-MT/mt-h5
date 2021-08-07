@@ -1,16 +1,17 @@
 {
   "pages": [
-    "pages/flashDetermination/index",
-    "pages/login/index",
-    "pages/home/index",
-    "pages/seize/seizeCountdown/index",
-    "pages/seize/seizeSuccess/index",
     "pages/me/index",
+    "pages/login/index",
     "pages/sign/index",
     "pages/sign/signDetails/index",
-    "pages/sign/signQRCode/index",
+    "pages/flashDetermination/index",
+    "pages/flashDetermination/reservationSuccess/index",
     "pages/flashDetermination/quickReservation/index",
-    "pages/flashDetermination/reservationSuccess/index"
+    "pages/home/index",
+    "pages/seize/index",
+    "pages/seize/seizeCountdown/index",
+    "pages/seize/seizeSuccess/index",
+    "pages/sign/signQRCode/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -24,10 +25,22 @@
     "selectedColor": "#097cff",
     "list": [
       {
-        "pagePath": "pages/home/index",
-        "text": "会议",
-        "selectedIconPath": "images/meet-s.png",  
-        "iconPath": "images/meet.png"
+        "pagePath": "pages/flashDetermination/index",
+        "text": "预定",
+        "selectedIconPath": "images/sd.png",  
+        "iconPath": "images/sd2.png"
+      },
+      {
+        "pagePath": "pages/seize/index",
+        "text": "抢占",
+        "selectedIconPath": "images/qz.png",  
+        "iconPath": "images/qz2.png"
+      },
+      {
+        "pagePath": "pages/sign/index",
+        "text": "签到",
+        "selectedIconPath": "images/qd.png",  
+        "iconPath": "images/qd2.png"
       },
       {
         "pagePath": "pages/me/index",

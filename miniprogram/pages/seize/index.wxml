@@ -1,47 +1,4 @@
 <!--会议信息确认-->
 <view class="container">
-  <view class="w-form-item">
-    <view class="w-form-label">会议室</view>
-    <picker class="w-form-content" bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{array}}">
-      <input class="weui-input" placeholder="请输入会议室" value="{{array[index].name}}"/>
-    </picker>
-  </view>
-
-  <view class="w-form-item">
-    <view class="w-form-label">会议开始时间</view>
-    <picker class="w-form-content" mode="time" bindchange="changeStartDate">
-      <input class="weui-input" placeholder="请选择会议开始时间" value="{{startDate}}"/>
-    </picker>
-  </view>
-
-  <view class="w-form-item">
-    <view class="w-form-label">会议结束时间</view>
-    <picker class="w-form-content" mode="time" bindchange="changeEndDate">
-      <input class="weui-input" placeholder="请选择会议结束时间" value="{{endDate}}"/>
-    </picker>
-  </view>
-
-  <view class="w-form-item">
-    <view class="w-form-label">原主持人</view>
-    <view class="w-form-content">
-      <input class="weui-input" placeholder="请输入原主持人" value="{{originPerson}}"/>
-    </view>
-  </view>
-
-  <view class="w-form-item">
-    <view class="w-form-label">修改会议主题</view>
-    <view class="w-form-content">
-      <input class="weui-input" placeholder="请输入会议主题" value="{{meetingTitle}}"/>
-    </view>
-  </view>
-
-  <view class="btn-group">
-    <view class="btn-wrap">
-      <button bindtap="handleSure" class="btn-sure" type="primary" size="default" style="width: 100%;margin-bottom: 30rpx;">确认抢占</button>
-    </view>
-    <view class="btn-wrap">
-      <button bindtap="back" type="default"  style="width: 100%;" plain>返回</button>
-    </view>
-  </view>
 
 </view>

@@ -15,10 +15,14 @@
   text-align: center;
 }
 .pic {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border: 1px solid #d8d8d8;
   margin: 20px auto;
+}
+.images {
+  width: 200px;
+  height: 200px;
 }
 .notice {
   margin-bottom: 80px;

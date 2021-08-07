@@ -23,7 +23,14 @@ Page({
               })
             }
           })
-          console.log("用户授权了");
+          console.log("用户授权了");
+          // let token = wx.getStorageSync('token');
+          // if (token) {
+          //   wx.switchTab({
+          //     url: '/pages/flashDetermination/index'
+          //   })
+          // }
+          
         } else {
           console.log("用户没有授权");
         }
@@ -49,7 +56,8 @@ Page({
               url: app.apiDomain + '/v1/login/login',
               data: {
                 code,
-                nick_name: e.detail.userInfo.nickName
+                nick_name: e.detail.userInfo.nickName,
+                avatar: e.detail.userInfo.avatarUrl
               },
               method: 'POST',
               header: {
@@ -58,9 +66,10 @@ Page({
               success(res) {
                 console.log('res44', res)
                 wx.setStorageSync('userInfo', e.detail.userInfo);
-                wx.setStorageSync('token', res.data.data);
+                wx.setStorageSync('token', res.data.data.token);
+                // wx.setStorageSync('token', 'vytknzmuofb6yx04c2niuk7k373gbt65');
                 wx.switchTab({
-                  url: '/pages/home/index'
+                  url: '/pages/flashDetermination/index'
                 })
               }
             })

@@ -5,15 +5,15 @@
     <view class="success-title">预定成功</view>
   </view>
   <view class="success-content">
-    <view class="title">高维鹏预订的会议室</view>
+    <view class="title">{{successInfo.subject}}</view>
     <view class="info-wrap">
       <view class="address">
         <view class="label">会议地点</view>
-        <view class="info">风陵渡（电话 预计2人）</view>
+        <view class="info">{{successInfo.name}}（{{successInfo.uses_name}} 预计{{successInfo.capacity}}人）</view>
       </view>
       <view class="time">
         <view class="label">会议时间</view>
-        <view class="info">2021-7-8 16:00-17:00</view>
+        <view class="info">{{successInfo.date}} {{successInfo.metting_start_time}}-{{successInfo.metting_end_time}}</view>
       </view>
     </view>
   </view>

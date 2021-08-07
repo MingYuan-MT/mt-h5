@@ -2,25 +2,28 @@
 <view class="container">
   <view class="res-title-wrap">
     <view class="title-left">满足你条件的会议室</view>
-    <view class="title-right">武汉-花山-B3</view>
+    <!-- <view class="title-right">武汉-花山-B3</view> -->
   </view>
 
-  <view class="list-item">
-    <view class="list-item-wrap">
-      <view class="floor">4F</view>
-      <view class="meeting-title">风陵渡（电话 预计2人）</view>
-      <view class="meeting-time status-kongxian">16:00-17:00 空闲</view>
-      <button type="default" class="btn" style="width: 100px;" plain>快速预定</button>
+  <block wx:for="{{meetsData}}"  wx:for-item="item">
+    <view class="list-item">
+      <view class="list-item-wrap">
+        <view class="floor">{{item.floor}}</view>
+        <view class="meet-item" wx:for="{{item.list}}"  wx:for-item="ite">
+          <view class="meeting-title">{{ite.name}}（{{ite.uses_name}} 预计{{ite.capacity}}人）</view>
+          <view class="meeting-time status-kongxian">{{ite.metting_start_time}}-{{ite.metting_end_time}} 空闲</view>
+          <button bindtap="handleReservation" data-index="{{ite}}" type="default" class="btn" style="width: 100px;" plain>快速预定</button>
+        </view>
+      </view>
     </view>
-  </view>
+  </block>
 
-  <view class="list-item">
+  <!-- <view class="list-item">
     <view class="list-item-wrap">
-      <!-- <view class="floor">4F</view> -->
       <view class="meeting-title">风陵渡（电话 预计2人）</view>
       <view class="meeting-time status-zhanyong">16:00-17:00 空闲</view>
       <button type="default" class="btn" style="width: 100px;" plain>快速预定</button>
     </view>
-  </view>
+  </view> -->
 
 </view>

@@ -2,10 +2,6 @@
 <view class="container">
   <!-- tabs -->
   <view class="tabs">
-    <view class="tab-item {{tabActive === '1' ? 'item-active' : ''}}" bindtap="changeTab" data-index="1">
-      条件预订
-      <view class="{{tabActive === '1' ? 'active' : ''}}"></view>
-    </view>
     <view class="tab-item {{tabActive === '2' ? 'item-active' : ''}}" bindtap="changeTab" data-index="2">
       摇摇预订
       <view class="{{tabActive === '2' ? 'active' : ''}}"></view>
@@ -14,13 +10,17 @@
       语音预订
       <view class="{{tabActive === '3' ? 'active' : ''}}"></view>
     </view>
+    <view class="tab-item {{tabActive === '1' ? 'item-active' : ''}}" bindtap="changeTab" data-index="1">
+      条件预订
+      <view class="{{tabActive === '1' ? 'active' : ''}}"></view>
+    </view>
   </view>
 
   <!-- tab==1，条件预定 -->
   <block wx:if="{{tabActive === '1'}}">
     <!-- form -->
-    <view class="w-form-title" style="margin-top: 20px;margin-bottom: 10px;">
-      <view>GWP预定的会议</view>
+    <view class="w-form-title" style="margin-top: 10px;margin-bottom: 10px;">
+      <view>{{nickName}}预定的会议</view>
     </view>
 
     <view class="w-form-item">
@@ -81,8 +81,8 @@
   <block wx:if="{{tabActive === '2'}}">
     <view class="y-wrap">
       <view class="y-pic">
-        <image wx:if="{{!isChangeImage}}" class="y-image" src="../../images/y1.png"></image>
-        <image wx:if="{{isChangeImage}}" class="y-image" src="../../images/y2.png"></image>
+        <image class="y-image" src="../../images/y1.png"></image>
+        <!-- <image wx:if="{{isChangeImage}}" class="y-image" src="../../images/y2.png"></image> -->
       </view>
       <view class="y-info">迅速查找所在位置1小时内可使用会议室</view>
     </view>

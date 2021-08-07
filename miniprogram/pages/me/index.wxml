@@ -12,7 +12,6 @@
   </view>
 
 
-  <!-- 上传图片 -->
   <view class="uploader">
     <view class="uploader-text"  bindtap="toMyMeets">
       <text>我预定的会议室</text>
@@ -20,11 +19,9 @@
     </view>
   </view>
 
-
-  <!-- 操作数据库 -->
   <view class="uploader">
     <view class="uploader-text" bindtap="toWasteRecord">
-      <text>签到会议室</text>
+      <text>资源浪费记录</text>
       <van-icon class="icon-right" name="arrow" />
     </view>
   </view>

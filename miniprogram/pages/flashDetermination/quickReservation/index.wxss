@@ -12,7 +12,7 @@
   border-bottom: 1px solid #d8d8d8;
 }
 .title-left {
-  width: 60%;
+  width: 100%;
   text-align: left;
   padding-left: 20px;
   font-weight: 600;
@@ -28,7 +28,7 @@
 .list-item {
   width: 100%;
   padding: 20px;
-  border-bottom: 1px solid #d8d8d8;
+  
 }
 .list-item-wrap {
   padding: 0 20px;
@@ -43,6 +43,11 @@
   border-radius: 4px;
   margin-bottom: 10px;
 }
+.meet-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #d8d8d8;
+  position: relative;
+}
 .meeting-title {
   margin-bottom: 10px;
 }
@@ -56,7 +61,7 @@
   /* width: 140px; */
   position: absolute;
   right: 20px;
-  bottom: 0px;
+  bottom: 20px;
   font-size: 12px;
   padding: 5px 20px;
 }

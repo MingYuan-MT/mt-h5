@@ -2,59 +2,37 @@
 <view class="container">
   <view class="content-wrap">
     <view class="title">已签到人数</view>
-    <view class="count">88</view>
+    <view class="count">{{info.count || 0}}</view>
 
-    <view class="signed-info">
+    <view class="signed-info" wx:if="{{info.yes.length}}">
       <view class="tag">已签到</view>
       <view class="list-wrap">
-        <view class="list-item">
-          <view class="pic"></view>
+        <view class="list-item" wx:for="{{info.yes}}" wx:for-item="item">
+          <view class="pic">
+            <image class="image" src="{{item.avatar}}"></image>
+          </view>
           <view class="info">
-            <view class="name">张三</view>
-            <view class="job">研发工程师</view>
+            <view class="name">{{item.name}}</view>
+            <view class="job">{{item.job || '未知'}}</view>
           </view>
         </view>
-        <view class="list-item">
-          <view class="pic"></view>
-          <view class="info">
-            <view class="name">张三</view>
-            <view class="job">研发工程师</view>
-          </view>
-        </view>
-        <view class="list-item">
-          <view class="pic"></view>
-          <view class="info">
-            <view class="name">张三</view>
-            <view class="job">研发工程师</view>
-          </view>
-        </view>
+        
       </view>
     </view>
 
-    <view class="no-signed-info">
+    <view class="no-signed-info" wx:if="{{info.no.length}}">
       <view class="tag">未签到</view>
       <view class="list-wrap">
-        <view class="list-item">
-          <view class="pic"></view>
+        <view class="list-item"  wx:for="{{info.no}}" wx:for-item="item">
+          <view class="pic">
+            <image class="image" src="{{item.avatar}}"></image>
+          </view>
           <view class="info">
-            <view class="name">张三</view>
-            <view class="job">研发工程师</view>
+            <view class="name">{{item.name}}</view>
+            <view class="job">{{item.job || '未知'}}</view>
           </view>
         </view>
-        <view class="list-item">
-          <view class="pic"></view>
-          <view class="info">
-            <view class="name">张三</view>
-            <view class="job">研发工程师</view>
-          </view>
-        </view>
-        <view class="list-item">
-          <view class="pic"></view>
-          <view class="info">
-            <view class="name">张三</view>
-            <view class="job">研发工程师</view>
-          </view>
-        </view>
+        
       </view>
     </view>
   </view>
